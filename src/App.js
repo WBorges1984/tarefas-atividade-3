@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import './App.css'
+import Container from './components/Container/container.jsx';
+import TaskForm from './components/TaskForm/taskForm.jsx';
+import TaskList from './components/TaskList/taskList.jsx';
 
 function App() {
+  const [tasks, setTasks] = useState([]);
+
+  const addTask = (title) => {
+    const newTask = { id: tasks.length + 1, title, completed: false };
+    setTasks([...tasks, newTask]);
+  };
+
+  const removeTask = (id) => {
+    const updatedTasks = tasks.filter(task => task.id !== id);
+    setTasks(updatedTasks);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      <Container>
+        <h1 className='title'>Gestor de Tarefas</h1>
+        <div className='inputButton'>
+          <TaskForm addTask={addTask} />
+          <TaskList tasks={tasks} removeTask={removeTask} />
+        </div>
+      </Container>
+    </main>
   );
 }
-
 export default App;

@@ -1,0 +1,13 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    /* background-color: aqua; */
+    width: auto;
+    margin-top: 50px;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #333; 
+    padding: 20px; 
+    border-radius: 10px;
+}

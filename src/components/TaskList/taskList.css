@@ -1,0 +1,13 @@
+.titleTaskList{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.titleImg{
+    display: flex;
+    align-items: center;
+}
+
+.titleImg img{
+    width: 24px;
+}

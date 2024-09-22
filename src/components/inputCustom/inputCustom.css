@@ -1,0 +1,9 @@
+.inputCustom{
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #bc2222; 
+    outline: none;
+    font-weight: 600;
+}
